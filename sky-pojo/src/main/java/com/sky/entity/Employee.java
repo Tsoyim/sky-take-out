@@ -29,7 +29,7 @@ public class Employee implements Serializable {
     private String sex;
 
     private String idNumber;
-
+    // 下列为前端未传入（设置）的属性
     private Integer status;
 
     //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
