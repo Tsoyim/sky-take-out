@@ -41,7 +41,6 @@ public class SetmealServiceImpl implements SetmealService {
      */
     @Override
     public PageResult pageQuery(SetmealPageQueryDTO setmealPageQueryDTO) {
-        // TODO 完善分页查询，返回分类名称
         // select s.*, c.name as categoryName from setmeal s left outer join category s on d.category_id = c.id
         PageHelper.startPage(setmealPageQueryDTO.getPage(), setmealPageQueryDTO.getPageSize());
         Page<SetmealVO> page = setmealMapper.pageQuery(setmealPageQueryDTO);
