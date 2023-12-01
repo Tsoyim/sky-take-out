@@ -84,14 +84,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         // 设置默认密码12346，md5加密后存储
         employee.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
 
-        // 设置当前记录的创建时间和修改实际
-        // employee.setCreateTime(LocalDateTime.now());
-        // employee.setUpdateTime(LocalDateTime.now());
 
-        // 设置当前创建人id和修改人id
-
-        // employee.setCreateUser(BaseContext.getCurrentId());
-        // employee.setUpdateUser(BaseContext.getCurrentId());
 
         // 插入数据
         employeeMapper.insert(employee);

@@ -23,6 +23,8 @@ public interface DishMapper {
     @Select("select count(id) from dish where category_id = #{categoryId}")
     Integer countByCategoryId(Long categoryId);
 
+
+
     /**
      * 插入菜品数据
      * @param dish
@@ -64,4 +66,19 @@ public interface DishMapper {
      */
     @AutoFill(value = OperationType.UPDATE)
     void update(Dish dish);
+
+    /**
+     * 根据分类id查询菜品
+     * @param categoryId
+     * @return
+     */
+    List<Dish> getByCategoryId(Long categoryId);
+
+    /**
+     * 根据套餐id查找菜品
+     * @param setmealId
+     * @return
+     */
+    @Select("select d.* from dish d left join sky_take_out.setmeal_dish sd on d.id = sd.dish_id where setmeal_id = #{setmealId}")
+    List<Dish> getBySetmealId(Long setmealId);
 }
