@@ -81,4 +81,12 @@ public interface DishMapper {
      */
     @Select("select d.* from dish d left join sky_take_out.setmeal_dish sd on d.id = sd.dish_id where setmeal_id = #{setmealId}")
     List<Dish> getBySetmealId(Long setmealId);
+
+
+    /**
+     * 动态条件查询菜品
+     * @param dish
+     * @return
+     */
+    List<Dish> list(Dish dish);
 }
