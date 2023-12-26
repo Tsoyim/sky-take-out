@@ -36,13 +36,13 @@
         select s.*, c.name as categoryName from setmeal s left outer join category c on s.category_id = c.id
         <where>
             <if test="name != null and name != ''">
-                and d.name like concat('%',#{name},'%')
+                and s.name like concat('%',#{name},'%')
             </if>
             <if test="categoryId != null">
-                and d.category_id = #{categoryId}
+                and s.category_id = #{categoryId}
             </if>
             <if test="status != null">
-                and d.status = #{status}
+                and s.status = #{status}
             </if>
         </where>
         order by create_time desc
