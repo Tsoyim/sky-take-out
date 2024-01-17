@@ -54,6 +54,13 @@ sky:
     appid: ${sky.wechat.appid}
     secret: ${sky.wechat.secret}
 
+  shop:
+    address: 广州市番禺区兴业大道东855号暨南大学番禺校区
+
+  baidu:
+    ak: Q6n2OVROwszuMkyLhc1lo22U2xWOG1gB
+
+
   alioss:
     endpoint: ${sky.alioss.endpoint}
     access-key-id: ${sky.alioss.access-key-id}

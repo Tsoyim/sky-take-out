@@ -53,6 +53,11 @@ public class OrderServiceImpl implements OrderService {
     private UserMapper userMapper;
     @Autowired
     private WeChatPayUtil weChatPayUtil;
+    @Value("${sky.shop.address}")
+    private String shopAddress;
+
+    @Value("${sky.baidu.ak}")
+    private String ak;
 
 
     /**
@@ -71,7 +76,7 @@ public class OrderServiceImpl implements OrderService {
         }
 
         //检查用户的收货地址是否超出配送范围
-        //checkOutOfRange(addressBook.getCityName() + addressBook.getDistrictName() + addressBook.getDetail());
+        checkOutOfRange(addressBook.getCityName() + addressBook.getDistrictName() + addressBook.getDetail());
 
         //查询当前用户的购物车数据
         Long userId = BaseContext.getCurrentId();
@@ -124,11 +129,7 @@ public class OrderServiceImpl implements OrderService {
         return orderSubmitVO;
     }
 
-    @Value("${sky.shop.address}")
-    private String shopAddress;
 
-    @Value("${sky.baidu.ak}")
-    private String ak;
 
     /**
      * 检查客户的收货地址是否超出配送范围
