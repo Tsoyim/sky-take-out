@@ -12,8 +12,8 @@ sky:
 
   alioss:
     endpoint: oss-cn-guangzhou.aliyuncs.com
-    access-key-id: LTAI5tGCckZz5YHFwCfv7Lr6
-    access-key-secret: akJd3fEsfAPzA5634VHptTcxO0pYAy
+    access-key-id: 111
+    access-key-secret: 111
     bucket-name: tsoyim-sky-itcase
 
   redis:
